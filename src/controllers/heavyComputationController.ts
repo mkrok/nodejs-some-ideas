@@ -1,6 +1,6 @@
 import { Request, Response, Router } from 'express';
 import fs from 'fs';
-import child from 'child_process';
+import { ChildProcess, fork } from 'child_process';
 
 const heavyComputationController = () => {
   const router: Router = Router();
@@ -18,7 +18,7 @@ const heavyComputationController = () => {
   });
 
   router.get('/fork', (req: Request, res: Response) => {
-    const compute = child.fork('./src/controllers/compute.ts');
+    const compute: ChildProcess = fork('./src/controllers/compute.ts');
     compute.send('start');
     compute.on('message', msg => {
       res.send(msg);

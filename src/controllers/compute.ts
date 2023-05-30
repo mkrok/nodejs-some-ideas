@@ -14,5 +14,5 @@ const doHeavyComputationTask = () => {
 process.on('message', msg => {
   console.log('Child process received message: ', msg);
   doHeavyComputationTask();
-  process.send('Done!\n\n');
+  process.send('Forked process did the job!\n\n');
 });
