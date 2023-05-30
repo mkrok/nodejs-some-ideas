@@ -2,11 +2,11 @@ import { Request, Response, Router } from 'express';
 import fs from 'fs';
 import child from 'child_process';
 
-const heavyController = () => {
+const heavyComputationController = () => {
   const router: Router = Router();
 
   router.get('/', (req: Request, res: Response) => {
-    const file = fs.createWriteStream('./big.file');
+    const file = fs.createWriteStream('./HugeFile.txt');
     console.time('Parent process');
     for (let i = 0; i < 1e7; i++) {
       file.write('Boom boom boom boom!\n');
@@ -28,4 +28,4 @@ const heavyController = () => {
   return router;
 };
 
-export default heavyController;
+export default heavyComputationController;

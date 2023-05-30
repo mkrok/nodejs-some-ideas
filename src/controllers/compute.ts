@@ -1,10 +1,10 @@
 import fs from 'fs';
 
 const doHeavyComputationTask = () => {
-  const file = fs.createWriteStream('./big.file');
+  const file = fs.createWriteStream('./HugeFile.txt');
   console.time('Forked process');
   for (let i = 0; i < 1e6; i++) {
-    file.write('Blah Blah Blah!\n');
+    file.write('Blah Blah Blah Blah!\n');
   }
 
   file.end();
