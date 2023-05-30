@@ -1,0 +1,8 @@
+build/
+
+*.yml
+*.json
+*.md
+*.css
+*.png
+**/*.snap

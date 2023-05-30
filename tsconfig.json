@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {  
+    "allowSyntheticDefaultImports":true,
+    "checkJs": true,
+    "esModuleInterop": true,
+    "sourceMap": true,
+    "allowJs": true,
+    "baseUrl": ".",
+    "paths": {
+      "~/*": [
+        "src/*"
+      ]
+    },
+    "target": "es5",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "lib": [
+      "es2016",
+      "dom"
+    ],
+    "types": ["node"]
+  },
+  "include": [
+    "./src/**/*"
+  ]
+}
